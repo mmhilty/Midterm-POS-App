@@ -12,16 +12,13 @@ namespace Midterm_POS_App
     {
         static void Main(string[] args)
         {
+
             Dictionary<string, FoodItem> foodDictionary = ManipFoodData.ReadData();
-            foreach (KeyValuePair<string, FoodItem> pair in foodDictionary)
-            {
-                FoodItem food = pair.Value;
-                Console.WriteLine($"Name: {food.Name}\n" +
-                    $"Category: {food.Category}\n" +
-                    $"Description: {food.Description} \n" +
-                    $"Price: ${food.Price, 2}");
-                
-            }
+            MenusClass.MainMenu(foodDictionary);
+
+            //dictionaries are unsorted and only findable by key
+
+
         }
     }
 }

@@ -1,3 +1,12 @@
-﻿Sweet Roll/Dessert/Happiness in a pastry./2
-Honey Nut Treat/Dessert/Sticky nuts. On a stick./2
-Cabbage Potato Soup/Main/Put some hair on your chest./5
+﻿Beef Stew/Main/Hearty stew with plenty of meaty goodness. Put some hair on your chest./8.00
+Cabbage Potato Soup/Main/Hearty autumn soup for the meatless among us/5.00
+Horker Stew/Main/Horker stewed up with garlic and lavender. Better than it sounds./8.00
+Salmon Steak/Main/Fresh caught grilled salmon steak./14.00
+Steamed Mudcrab Legs/Main/Crack it open and smother it in butter/15.00
+Grilled Leeks/Side/Gently seared leeks/2.00
+Garlic Bread/Side/Grilled bread covered in enough garlic butter to drop a vampire at 10 paces/2.00
+Sweet Roll/Dessert/You can't buy happiness, but you can get pretty close with this iconic pastry./2.00
+Snowberry Crostata/Dessert/Flaky sweet pastry wrapped around fresh, tart snowberries/5.00
+Honey Nut Treat/Dessert/Sticky sweet nuts. On a stick./2.00
+Boiled Creme Treat/Dessert/Sweet pastry with a custard topping/4.00
+Long Taffy Treat/Dessert/Two feet of soft taffy/3.00

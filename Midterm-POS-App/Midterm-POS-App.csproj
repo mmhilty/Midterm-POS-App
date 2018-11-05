@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Checkout.cs" />
     <Compile Include="FoodItem.cs" />
-    <Compile Include="MainMenuClass.cs" />
+    <Compile Include="MenusClass.cs" />
+    <Compile Include="OrderOptions.cs" />
     <Compile Include="ParseData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ManipFoodData.cs" />
+    <Compile Include="Validation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
