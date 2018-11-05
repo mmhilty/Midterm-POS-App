@@ -1,0 +1,7 @@
+C:\Users\mhilty\source\repos\Midterm-POS-App\Midterm-POS-App\bin\Debug\Midterm-POS-App.exe.config
+C:\Users\mhilty\source\repos\Midterm-POS-App\Midterm-POS-App\bin\Debug\Midterm-POS-App.exe
+C:\Users\mhilty\source\repos\Midterm-POS-App\Midterm-POS-App\bin\Debug\Midterm-POS-App.pdb
+C:\Users\mhilty\source\repos\Midterm-POS-App\Midterm-POS-App\obj\Debug\Midterm-POS-App.csprojAssemblyReference.cache
+C:\Users\mhilty\source\repos\Midterm-POS-App\Midterm-POS-App\obj\Debug\Midterm-POS-App.csproj.CoreCompileInputs.cache
+C:\Users\mhilty\source\repos\Midterm-POS-App\Midterm-POS-App\obj\Debug\Midterm-POS-App.exe
+C:\Users\mhilty\source\repos\Midterm-POS-App\Midterm-POS-App\obj\Debug\Midterm-POS-App.pdb
