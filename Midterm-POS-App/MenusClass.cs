@@ -15,14 +15,27 @@ namespace Midterm_POS_App
             bool killswitch = true;
             while(killswitch)
             {
-                
-
-
                 List<FoodItem> order = new List<FoodItem>();
-                Console.WriteLine("\nWelcome to the The Winking Skeever! What are you aiming to do?\n" +
-                    "1. Order food\n" +
-                    "2. Buy some potions\n" +
-                    "3. Skedaddle\n");
+                Console.WriteLine(@"
+....................................................................
+|                                                         MAIN MENU |
+|...................................................................|
+| : : : :::#:#:#:#:##:##:######:#####:#############|________|_______|
+| : : : :::#:#:#:#:##:##:######:#####:#############|        |       |
+| : : : : : ::#:#:#:#:#:##:###:###:#####:##########|        |       |
+| : : :  (-) :::#:#:#:#:#:#:##:####:###:###:####:##|        |       |
+|______.-'-'-.___________________________:####::###|________|_______|
+|      |-...-|             .--''''''--.  \:###:#####:###############|
+|      |;:.._|            |'''''/      |  \:#:#:##:##:###:#####:####|
+|      `-...-'            '''''/_...--'|   \#:#:#:##:##:###:###:####|
+|                          /\  |__...--'    \ :::#::#:#:#:#:#####:##|
+|_________________________/  \_______________\                      |
+|                                      | |      1. Order food       |
+|  Welcome to the The Winking Skeever! | |      2. Buy some potions |
+|  What are you aiming to do?          | |      3. Skedaddle        |
+|......................................|.|..........................|
+");
+                Console.Write("Type a number to make a selection: ");
                string userMainMenuInput = Console.ReadLine();
             
                switch (userMainMenuInput)
@@ -51,12 +64,32 @@ namespace Midterm_POS_App
             bool killswitch = true;
             while (killswitch)
             {
-                Console.WriteLine("\nWhat would you like to do?\n" +
-                    "1. Add an item to your order\n" +
-                    "2. View Your Order\n" +
-                    "3. View the Menu\n" +
-                    "4. Check Out\n" +
-                    "5. Cancel order and go back to main menu.\n");
+                //Console.WriteLine("\nWhat would you like to do?\n" +
+                //    "1. Add an item to your order\n" +
+                //    "2. View Your Order\n" +
+                //    "3. View the Menu\n" +
+                //    "4. Check Out\n" +
+                //    "5. Cancel order and go back to main menu.\n");
+
+                Console.WriteLine(@"
+....................................................................
+|                                                        ORDER UP   |
+|...................................................................|
+| : : : :::#:#:#:#:##:##:######:#####:#############|________|_______|
+| : : : :::#:#:#:#:##:##:######:#####:#############|        |       |
+| : : : : : ::#:#:#:#:#:##:###:###:#####:##########|        |       |
+| : : :  (-) :::#:#:#:#:#:#:##:####:###:###:####:##|        |       |
+|______.-'-'-.___________________________:####::###|________|_______|
+|      |-...-|   _______   .--''''''--.  \:###:#####:###############|
+|      |;:.._|  / MENU /  |'''''/      |  \:#                     ##|
+|      `-...-' / ==== /   '''''/_...--'|   \#   1. Add food       ##|
+|             /______/     /\  |__...--'    \   2. View order     ##|
+|_________________________/  \_______________\  3. Look at menu     |
+|                                      | |      4. Check out        |
+|  So you want to order some food, eh? | |      5. Never mind. Go   |
+|  Hit me.                             | |         back.            |
+|......................................|.|..........................|
+");
 
                 string userOrderMenuInput = Console.ReadLine();
                 switch (userOrderMenuInput)
@@ -93,12 +126,33 @@ namespace Midterm_POS_App
 
             while (true)
             {
-                Console.WriteLine($"Now checking you out. Your total is {String.Format("{0:C}", OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal))}\n" +
-                    "Type in a number from the list to:\n" +
-                    "1. Pay by Cash\n" +
-                    "2. Pay by Credit Card\n" +
-                    "3. Pay by Check\n" +
-                    "4. Cancel and go back to your order\n");
+                //Console.WriteLine($"Now checking you out. Your total is {String.Format("{0:C}", OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal))}\n" +
+                //    "Type in a number from the list to:\n" +
+                //    "1. Pay by Cash\n" +
+                //    "2. Pay by Credit Card\n" +
+                //    "3. Pay by Check\n" +
+                //    "4. Cancel and go back to your order\n");
+
+                Console.WriteLine(@"
+....................................................................
+|                                                        CHECK OUT  |
+|...................................................................|
+| : : : :::#:#:#:#:##:##:######:#####:#############|________|_______|
+| : : : :::#:#:#:#:##:##:######:#####:#############|        |       |
+| : : : : : ::#:#:#:#:#:##:###:###:#####:##########|        |       |
+| : : :  (-) :::#:#:#:#:#:#:##:####:###:###:####:##|        |       |
+|______.-'-'-.___________________________:####::###|________|_______|
+|      |-...-|    _____    .--''''''--.  \:###:#####:###############|
+|      |;:.._| O/ BILL /  |'''''/      |  \:#                     ##|
+|      `-...-' /oO  o /   '''''/_...--'|   \#   1. Pay with Cash  ##|
+|            o/O____O/     /\  |__...--'    \   2. Pay with Check ##|
+|_________________________/  \_______________\  3. Pay with Credit  |
+|                                      | |         card.            |");
+                Console.WriteLine($"| Your total is { $"{String.Format("{0:C}", OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal))}",-10}             | |      4.Never mind. Go    | ");
+Console.WriteLine("| How are you paying?                  | |         back.            |\n"+
+"|......................................|.|..........................| ");
+
+
                 int checkoutUserInput = Convert.ToInt32(Validation.NumberVal(Console.ReadLine()));
                 switch (checkoutUserInput)
                 {
