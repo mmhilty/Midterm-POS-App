@@ -50,10 +50,16 @@ namespace Midterm_POS_App
                 }
                 string userChoice;
                 int userNumberInput;
-                if (Int32.TryParse(userChooseInput, out userNumberInput))
+                if (Int32.TryParse(userChooseInput, out userNumberInput) && userNumberInput < foodDictionary.Count())
                 {
-                    userChoice = chooseFromDict[userNumberInput-1];
+                        userChoice = chooseFromDict[userNumberInput - 1];                 
                 }
+
+                else if (Int32.TryParse(userChooseInput, out userNumberInput) && userNumberInput >= foodDictionary.Count())
+                {
+                    userChoice = "";
+                }
+
                 else
                 {
                     userChoice = userChooseInput;
@@ -63,7 +69,7 @@ namespace Midterm_POS_App
                 foreach (KeyValuePair<string, FoodItem> pair in foodDictionary)
                 {
                     FoodItem item = pair.Value;
-                    if (item.Name == userChoice)
+                    if (item.Name.ToLower() == userChoice.ToLower())
                     {
                         Console.WriteLine("How many do you want to add?");
                         int numberOfItem = Convert.ToInt32(Validation.NumberVal(Console.ReadLine()));
@@ -100,30 +106,40 @@ namespace Midterm_POS_App
 
         public static void ListCurrentOrderDetails(List<FoodItem> order)
         {
-            Console.WriteLine($"{"Item",-25}{"Cost",-6}");
-            foreach (FoodItem item in order)
+            //Console.WriteLine($"{"Item",-25}{"Cost",-6}");
+            //foreach (FoodItem item in order)
+            //{
+            //    Console.WriteLine($"{item.Name,-25}{String.Format("{0:C}", item.Price),-6}");
+            //}
+
+            //List<double> subtotalList = new List<double>();
+            //foreach (FoodItem item in order)
+            //{
+            //    subtotalList.Add(item.Price);
+            //}
+
+            Dictionary<FoodItem,int> receiptDictionary = new Dictionary<FoodItem,int>();
+            receiptDictionary = order.GroupBy(FoodItem => FoodItem).ToDictionary(group => group.Key, group => group.Count());
+            Console.WriteLine($"{"Item",-25}{"Price",-7}{"Amount", -7}{"Cost",-6}");
+            foreach (KeyValuePair<FoodItem,int> pair in receiptDictionary)
             {
-                Console.WriteLine($"{item.Name,-25}{item.Price,-6}");
+                FoodItem item = pair.Key;
+                Console.WriteLine($"{item.Name,-25}{String.Format("{0:C}", item.Price),-7}{pair.Value,-7}{String.Format("{0:C}", (item.Price * pair.Value),-6)}");
             }
 
-            List<double> subtotalList = new List<double>();
-            foreach (FoodItem item in order)
-            {
-                subtotalList.Add(item.Price);
-            }
-            double subtotal = GetSubtotal(order);
-            double tax = GetTaxAmount(order, taxPercentageDecimal);
-            double total = GetTotalCost(order, taxPercentageDecimal);
+            decimal subtotal = GetSubtotal(order);
+            decimal tax = GetTaxAmount(order, taxPercentageDecimal);
+            decimal total = GetTotalCost(order, taxPercentageDecimal);
 
-            Console.WriteLine($"Subtotal:{subtotal}\n" +
-                $"Tax:{tax}\n" +
-                $"Total:{total}");
+            Console.WriteLine($"\nSubtotal:{String.Format("{0:C}", subtotal)}\n" +
+                $"Tax:{String.Format("{0:C}", tax)}\n" +
+                $"\nTotal:{String.Format("{0:C}", total)}\n");
 
         }
 
         #region moneymoneymoney
 
-        public static double GetTotalCost(List<FoodItem> order, double taxPercentageDecimal)
+        public static decimal GetTotalCost(List<FoodItem> order, double taxPercentageDecimal)
         {
             List<double> subtotalList = new List<double>();
             foreach (FoodItem item in order)
@@ -134,10 +150,10 @@ namespace Midterm_POS_App
             double tax = subtotal * taxPercentageDecimal;
             double total = tax + subtotal;
 
-            return total;
+            return Math.Round(Convert.ToDecimal(total), 2);
         }
 
-        public static double GetTaxAmount(List<FoodItem> order, double taxPercentageDecimal)
+        public static decimal GetTaxAmount(List<FoodItem> order, double taxPercentageDecimal)
         {
             List<double> subtotalList = new List<double>();
             foreach (FoodItem item in order)
@@ -147,17 +163,17 @@ namespace Midterm_POS_App
             double subtotal = subtotalList.Sum();
             double tax = subtotal * taxPercentageDecimal;
 
-            return tax;
+            return Math.Round(Convert.ToDecimal(tax), 2);
         }
 
-        public static double GetSubtotal(List<FoodItem> order)
+        public static decimal GetSubtotal(List<FoodItem> order)
         {
             List<double> subtotalList = new List<double>();
             foreach (FoodItem item in order)
             {
                 subtotalList.Add(item.Price);
             }
-            return subtotalList.Sum();
+            return Math.Round(Convert.ToDecimal(subtotalList.Sum()),2);
         }
 
         #endregion

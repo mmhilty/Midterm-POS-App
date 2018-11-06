@@ -45,7 +45,6 @@ namespace Midterm_POS_App
         {
             // view menu
             List<FoodItem> userOrder = new List<FoodItem>();
-            OrderOptions.ListFoodMenu(foodDictionary);
 
             bool killswitch = true;
             while (killswitch)
@@ -61,6 +60,7 @@ namespace Midterm_POS_App
                 switch (userOrderMenuInput)
                 {
                     case "1":
+                        OrderOptions.ListFoodMenu(foodDictionary);
                         userOrder = OrderOptions.AddFoodItem(userOrder, foodDictionary);
                         break;
                     case "2":
@@ -71,6 +71,7 @@ namespace Midterm_POS_App
                         break;
                     case "4":
                         MenusClass.CheckoutMenu(userOrder);
+                        killswitch = false;
                         break;
                     case "5":
                         Console.WriteLine("Are you sure you want to cancel this transaction? Y/N");
@@ -96,10 +97,13 @@ namespace Midterm_POS_App
         {
             //// would you like to 1 pay by cash 2 pay by credit card 3 pay by check 4 go back
 
-            while (true)
+            bool killswitch = true;
+            while (killswitch)
             {
-                Console.WriteLine("Now checking you out. Type in a number from the list to:\n" +
-                    "1. Pay by Cash" +
+                Console.WriteLine("Now checking you out. \n " +
+                    $"Your total is {String.Format("{0:C}", OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal))}\n" +
+                    "Type in a number from the list to:\n" +
+                    "1. Pay by Cash\n" +
                     "2. Pay by Credit Card\n" +
                     "3. Pay by Check\n" +
                     "4. Cancel and go back to your order\n");
@@ -108,12 +112,15 @@ namespace Midterm_POS_App
                 {
                     case 1:
                         Checkout.Cash(order);
+                        killswitch = false;
                         break;
                     case 2:
                         Checkout.CreditCard(order);
+                        killswitch = false;
                         break;
                     case 3:
                         Checkout.Check(order);
+                        killswitch = false;
                         break;
                     case 4:
                         break;
