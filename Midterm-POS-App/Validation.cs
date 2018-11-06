@@ -34,27 +34,23 @@ namespace Midterm_POS_App
 
         public static double CreditCardVal(string numberString)
         {
+            string NumberString = numberString;
 
             while (true)
             {
                 double NumberDbl;
-                if (double.TryParse(numberString, out NumberDbl) && numberString.Count() == 16)
+                if (double.TryParse(NumberString, out NumberDbl) && NumberString.Count() == 16)
                 {
-                    if (Convert.ToInt32(NumberDbl.ToString()[0]) == 3 || 
-                        Convert.ToInt32(NumberDbl.ToString()[0]) == 4 || 
-                        Convert.ToInt32(NumberDbl.ToString()[0]) == 5 || 
-                        Convert.ToInt32(NumberDbl.ToString()[0]) == 6)
-                    {
+                    
                         return NumberDbl;
-                    }
+
                 }
 
                 else
                 {
                     Console.WriteLine("Invalid input. Please recheck your card number.\n");
                 }
-
-                numberString = Console.ReadLine();
+                NumberString = Console.ReadLine();
 
             }
         }
@@ -62,10 +58,7 @@ namespace Midterm_POS_App
         public static int SecurityCodeVal(string numberString, int maxNum)
         {
             string NumberString = numberString;
-            NumberString.Replace(".", "");
-            NumberString.Replace("", "");
-            NumberString.Replace("/", "");
-
+          
             int NumberInt;
 
             while (true)
@@ -85,13 +78,37 @@ namespace Midterm_POS_App
             }
         }
 
-        public static string DateVal(string dateString)
+        public static double CheckNumsVal(string numberString, int maxNum)
         {
+            string NumberString = numberString;
+
+            double NumberDbl;
+
             while (true)
             {
-                string DateString = dateString;
+                if (Double.TryParse(NumberString, out NumberDbl) && NumberString.Count() <= maxNum)
+                {
+                    return NumberDbl;
+                }
+
+                else
+                {
+                    Console.WriteLine("Invalid input. Please recheck your number.\n");
+                }
+
+                NumberString = Console.ReadLine();
+
+            }
+        }
+
+        public static string DateVal(string dateString)
+        {
+            string DateString = dateString;
+
+            while (true)
+            {
                 DateTime date;
-                if (DateTime.TryParse(dateString, out date))
+                if (DateTime.TryParse(DateString, out date))
                 {
                     return dateString;
                 }

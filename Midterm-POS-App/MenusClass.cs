@@ -15,8 +15,11 @@ namespace Midterm_POS_App
             bool killswitch = true;
             while(killswitch)
             {
+                
+
+
                 List<FoodItem> order = new List<FoodItem>();
-                Console.WriteLine("Welcome to the The Winking Skeever! What are you aiming to do?\n" +
+                Console.WriteLine("\nWelcome to the The Winking Skeever! What are you aiming to do?\n" +
                     "1. Order food\n" +
                     "2. Buy some potions\n" +
                     "3. Skedaddle\n");
@@ -43,7 +46,6 @@ namespace Midterm_POS_App
 
         public static void OrderMenu(Dictionary<string, FoodItem> foodDictionary)
         {
-            // view menu
             List<FoodItem> userOrder = new List<FoodItem>();
 
             bool killswitch = true;
@@ -64,14 +66,13 @@ namespace Midterm_POS_App
                         userOrder = OrderOptions.AddFoodItem(userOrder, foodDictionary);
                         break;
                     case "2":
-                        OrderOptions.ListCurrentOrderDetails(userOrder);
+                        OrderOptions.ListCurrentOrderDetails(userOrder,"Your Order");
                         break;
                     case "3":
                         OrderOptions.ListFoodMenu(foodDictionary);
                         break;
                     case "4":
-                        MenusClass.CheckoutMenu(userOrder);
-                        killswitch = false;
+                        killswitch = MenusClass.CheckoutMenu(userOrder);                        
                         break;
                     case "5":
                         Console.WriteLine("Are you sure you want to cancel this transaction? Y/N");
@@ -84,24 +85,15 @@ namespace Midterm_POS_App
                 }
 
             }
-            // add to order
 
-            // checkout 
-            
-
-            // clear order 
-            //// you sure?
         }
 
-        public static void CheckoutMenu(List<FoodItem> order)
+        public static bool CheckoutMenu(List<FoodItem> order)
         {
-            //// would you like to 1 pay by cash 2 pay by credit card 3 pay by check 4 go back
 
-            bool killswitch = true;
-            while (killswitch)
+            while (true)
             {
-                Console.WriteLine("Now checking you out. \n " +
-                    $"Your total is {String.Format("{0:C}", OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal))}\n" +
+                Console.WriteLine($"Now checking you out. Your total is {String.Format("{0:C}", OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal))}\n" +
                     "Type in a number from the list to:\n" +
                     "1. Pay by Cash\n" +
                     "2. Pay by Credit Card\n" +
@@ -112,18 +104,15 @@ namespace Midterm_POS_App
                 {
                     case 1:
                         Checkout.Cash(order);
-                        killswitch = false;
-                        break;
+                        return false;                        
                     case 2:
                         Checkout.CreditCard(order);
-                        killswitch = false;
-                        break;
+                        return false;
                     case 3:
                         Checkout.Check(order);
-                        killswitch = false;
-                        break;
+                        return false;
                     case 4:
-                        break;
+                        return true;
                     default:
                         Console.WriteLine("Not an option. Please try again..");
                         break;

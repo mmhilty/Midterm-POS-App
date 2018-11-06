@@ -11,8 +11,13 @@ namespace Midterm_POS_App
         public const double taxPercentageDecimal = .06;
 
         public static void ListFoodMenu(Dictionary<string, FoodItem> foodDictionary)
-        { 
+        {
+            Console.WriteLine("____________________________________________________________________________________________________________________________\n");
+            Console.WriteLine("                                                            MENU                                                            ");
+            Console.WriteLine("____________________________________________________________________________________________________________________________");
             Console.WriteLine($"   {"Name",-25}{"Category",-10}{"Description",-80}{"Price",-6}");
+            Console.WriteLine("____________________________________________________________________________________________________________________________");
+
             int i = 1;
             foreach (KeyValuePair<string, FoodItem> pair in foodDictionary)
             {                
@@ -20,8 +25,10 @@ namespace Midterm_POS_App
                     Console.WriteLine($"{i,-3}{food.Name , -25}{food.Category,-10}{food.Description, -80}{food.Price,-6}");
                     i++;
             }
+            Console.WriteLine("____________________________________________________________________________________________________________________________\n");
+
         }
-               
+
         public static List<FoodItem> AddFoodItem(List<FoodItem> order, Dictionary<string,FoodItem> foodDictionary)
         {
             while (true)
@@ -50,7 +57,7 @@ namespace Midterm_POS_App
                 }
                 string userChoice;
                 int userNumberInput;
-                if (Int32.TryParse(userChooseInput, out userNumberInput) && userNumberInput < foodDictionary.Count())
+                if (Int32.TryParse(userChooseInput, out userNumberInput) && userNumberInput <= foodDictionary.Count())
                 {
                         userChoice = chooseFromDict[userNumberInput - 1];                 
                 }
@@ -71,7 +78,7 @@ namespace Midterm_POS_App
                     FoodItem item = pair.Value;
                     if (item.Name.ToLower() == userChoice.ToLower())
                     {
-                        Console.WriteLine("How many do you want to add?");
+                        Console.WriteLine($"How many {item.Name}s do you want to add?");
                         int numberOfItem = Convert.ToInt32(Validation.NumberVal(Console.ReadLine()));
                         if (numberOfItem == 0)
                         {
@@ -104,36 +111,29 @@ namespace Midterm_POS_App
             }
         }
 
-        public static void ListCurrentOrderDetails(List<FoodItem> order)
+        public static void ListCurrentOrderDetails(List<FoodItem> order, string title)
         {
-            //Console.WriteLine($"{"Item",-25}{"Cost",-6}");
-            //foreach (FoodItem item in order)
-            //{
-            //    Console.WriteLine($"{item.Name,-25}{String.Format("{0:C}", item.Price),-6}");
-            //}
-
-            //List<double> subtotalList = new List<double>();
-            //foreach (FoodItem item in order)
-            //{
-            //    subtotalList.Add(item.Price);
-            //}
 
             Dictionary<FoodItem,int> receiptDictionary = new Dictionary<FoodItem,int>();
             receiptDictionary = order.GroupBy(FoodItem => FoodItem).ToDictionary(group => group.Key, group => group.Count());
-            Console.WriteLine($"{"Item",-25}{"Price",-7}{"Amount", -7}{"Cost",-6}");
+            Console.WriteLine($"________________________________________________\n");
+            Console.WriteLine($"                    {title}                   ");
+            Console.WriteLine($"________________________________________________\n" +
+                $" {"Item",-25}{"Price",-7}{"Amount", -7}{"Cost",-6} \n" +
+                $"________________________________________________");
             foreach (KeyValuePair<FoodItem,int> pair in receiptDictionary)
             {
                 FoodItem item = pair.Key;
                 Console.WriteLine($"{item.Name,-25}{String.Format("{0:C}", item.Price),-7}{pair.Value,-7}{String.Format("{0:C}", (item.Price * pair.Value),-6)}");
             }
-
+            Console.WriteLine("_______________________________________________");
             decimal subtotal = GetSubtotal(order);
             decimal tax = GetTaxAmount(order, taxPercentageDecimal);
             decimal total = GetTotalCost(order, taxPercentageDecimal);
 
-            Console.WriteLine($"\nSubtotal:{String.Format("{0:C}", subtotal)}\n" +
-                $"Tax:{String.Format("{0:C}", tax)}\n" +
-                $"\nTotal:{String.Format("{0:C}", total)}\n");
+            Console.WriteLine($"\n{"Subtotal:",39}{String.Format("{0:C}", subtotal),6}\n" +
+                $"{"Tax:",39}{String.Format("{0:C}", tax),6}\n" +
+                $"\n{"Total:",39}{String.Format("{0:C}", total),6}\n");
 
         }
 
@@ -177,5 +177,8 @@ namespace Midterm_POS_App
         }
 
         #endregion
+
+
+
     }
 }

@@ -14,9 +14,9 @@ namespace Midterm_POS_App
         {
 
             Dictionary<string, FoodItem> foodDictionary = ManipFoodData.ReadData();
+            
             MenusClass.MainMenu(foodDictionary);
 
-            //dictionaries are unsorted and only findable by key
 
 
         }
