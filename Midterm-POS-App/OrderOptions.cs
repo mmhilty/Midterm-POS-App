@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Midterm_POS_App
 {
@@ -42,9 +43,9 @@ namespace Midterm_POS_App
                     i++;
                 }
 
-                Console.WriteLine("What would you like to add to your order?\n" +
-                    "You can type in either the number or the full name of the item.\n" +
+                Console.WriteLine("\nYou can type in either the number or the full name of the item.\n" +
                     "You can also type \"cancel\" to go back to the main order menu or \"menu\" to view the menu again.\n");
+                Console.Write("What would you like to add to your order:");
                 string userChooseInput = Console.ReadLine();
                 if (userChooseInput.ToLower() == "menu")
                 {
@@ -134,9 +135,9 @@ namespace Midterm_POS_App
             Console.WriteLine($"\n{"Subtotal:",39}{String.Format("{0:C}", subtotal),6}\n" +
                 $"{"Tax:",39}{String.Format("{0:C}", tax),6}\n" +
                 $"\n{"Total:",39}{String.Format("{0:C}", total),6}\n");
-
         }
 
+       
         #region moneymoneymoney
 
         public static decimal GetTotalCost(List<FoodItem> order, double taxPercentageDecimal)

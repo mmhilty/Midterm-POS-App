@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.IO;
 
 
@@ -31,7 +32,7 @@ namespace Midterm_POS_App
 |                          /\  |__...--'    \ :::#::#:#:#:#:#####:##|
 |_________________________/  \_______________\                      |
 |                                      | |      1. Order food       |
-|  Welcome to the The Winking Skeever! | |      2. Buy some potions |
+|  Welcome to the The Chat-E Cheese!   | |      2. Buy some potions |
 |  What are you aiming to do?          | |      3. Skedaddle        |
 |......................................|.|..........................|
 ");
@@ -44,7 +45,26 @@ namespace Midterm_POS_App
                         OrderMenu(foodDictionary);
                         break;
                     case "2":
-                        Console.WriteLine("My potions are too strong for you, traveller!\n");
+                        Console.WriteLine(@"
+....................................................................
+|                                                        NO POTIONS |
+|...................................................................|
+| : : : :::#:#:#:#_[_]_#:######:#####:#############|________|_______|
+| : : : :::#:#:#:/_   _\:######:#####:#############|        |       |
+| : : : : : ::#:#)_``'_(##:###:###:#####:##########|        |       |
+| : : :  (-) :::#|;:   |#:#:##:####:###:###:####:##|        |       |
+|______.-'-'-.___|;:.._|_________________:####::###|_____/\_|_______|
+|      |-...-|   `-...-'   .--''''''--.  \:###:#####:## [_ ] #######|
+|      |;:.._|            |'''''/      |  \:#:#:##:##  -'. '-. :####|
+|      `-...-'            '''''/_...--'|   \#:#:#:## /:;/ _.-'\  ###|
+|                          /\  |__...--'    \ :::#:  |:.TOO .-|  :##|
+|_________________________/  \_______________\       | STRONG |     |
+|                                      | |           |:.FOR   |     |
+|  My potions are too strong for you,  | |           |:.YOU~  |     |
+|  traveler!                           | |           |:._     |     |
+|......................................|.|...........|........|.....|
+");
+                        Thread.Sleep(1500);
                         break;
                     case "3":
                         killswitch = false;
@@ -90,6 +110,7 @@ namespace Midterm_POS_App
 |  Hit me.                             | |         back.            |
 |......................................|.|..........................|
 ");
+                Console.Write("Type a number to make a selection: ");
 
                 string userOrderMenuInput = Console.ReadLine();
                 switch (userOrderMenuInput)
@@ -132,7 +153,7 @@ namespace Midterm_POS_App
                 //    "2. Pay by Credit Card\n" +
                 //    "3. Pay by Check\n" +
                 //    "4. Cancel and go back to your order\n");
-
+                OrderOptions.ListCurrentOrderDetails(order, "Your Order");
                 Console.WriteLine(@"
 ....................................................................
 |                                                        CHECK OUT  |
@@ -148,22 +169,26 @@ namespace Midterm_POS_App
 |            o/O____O/     /\  |__...--'    \   2. Pay with Check ##|
 |_________________________/  \_______________\  3. Pay with Credit  |
 |                                      | |         card.            |");
-                Console.WriteLine($"| Your total is { $"{String.Format("{0:C}", OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal))}",-10}             | |      4.Never mind. Go    | ");
+                Console.WriteLine($"| Your total is { $"{String.Format("{0:C}", OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal))}",-10}             | |      4. Never mind. Go   | ");
 Console.WriteLine("| How are you paying?                  | |         back.            |\n"+
-"|......................................|.|..........................| ");
+"|......................................|.|..........................| \n");
 
+                Console.Write("Type a number to make a selection: ");
 
                 int checkoutUserInput = Convert.ToInt32(Validation.NumberVal(Console.ReadLine()));
                 switch (checkoutUserInput)
                 {
                     case 1:
                         Checkout.Cash(order);
+                        Thread.Sleep(250);
                         return false;                        
                     case 2:
-                        Checkout.CreditCard(order);
+                        Checkout.Check(order);
+                        Thread.Sleep(250);
                         return false;
                     case 3:
-                        Checkout.Check(order);
+                        Checkout.CreditCard(order);
+                        Thread.Sleep(250);
                         return false;
                     case 4:
                         return true;
