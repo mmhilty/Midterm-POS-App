@@ -124,6 +124,7 @@ namespace Midterm_POS_App
                 $"________________________________________________");
             foreach (KeyValuePair<FoodItem,int> pair in receiptDictionary)
             {
+
                 FoodItem item = pair.Key;
                 Console.WriteLine($"{item.Name,-25}{String.Format("{0:C}", item.Price),-7}{pair.Value,-7}{String.Format("{0:C}", (item.Price * pair.Value),-6)}");
             }

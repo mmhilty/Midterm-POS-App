@@ -19,7 +19,7 @@ namespace Midterm_POS_App
             decimal moneyTendered = 0;
             while (moneyTendered < orderTotal)
             {
-                Console.WriteLine("\n How much cash are you paying?");
+                Console.WriteLine("\nHow much cash are you paying?");
 
                 moneyTendered = moneyTendered + (Convert.ToDecimal(Validation.NumberVal(Console.ReadLine())));
 
@@ -48,7 +48,6 @@ namespace Midterm_POS_App
                     Console.WriteLine($"\n{"Money Tendered:",39}{String.Format("{0:C}", moneyTendered),6}\n");
                     Console.WriteLine($"{"Change:",39}{String.Format("{0:C}", moneyTendered - orderTotal),6}\n");
                 }
-                Thread.Sleep(5000);
             }
 
 
@@ -83,7 +82,6 @@ namespace Midterm_POS_App
             Console.WriteLine($"{"Security Code:",20}{secCode,25}");
             Console.WriteLine($"{"Expiration Date:",20}{ccExp,25}\n");
             Console.WriteLine("Have a great day!\n");
-            Thread.Sleep(5000);
         }
 
         public static void Check(List<FoodItem> order)
@@ -102,7 +100,6 @@ namespace Midterm_POS_App
             Console.WriteLine($"{String.Format("{0:C}", orderTotal)} has been paid via check: \n");
             Console.WriteLine($"{"Check Details:",14}{$" {routingNum} {acctNum} {checkNum}",31}");
             Console.WriteLine("\nHave a great day!\n");
-            Thread.Sleep(5000);
         }
 
 
