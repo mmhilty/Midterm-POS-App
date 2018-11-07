@@ -8,30 +8,7 @@ using System.Threading;
 namespace Midterm_POS_App
 {
     class Art
-    {
-        public static void mainMenuArt()
-        {
-            Console.WriteLine(@"
-....................................................................
-|                                                         MAIN MENU |
-|...................................................................|
-| : : : :::#:#:#:#:##:##:######:#####:#############|________|_______|
-| : : : :::#:#:#:#:##:##:######:#####:#############|        |       |
-| : : : : : ::#:#:#:#:#:##:###:###:#####:##########|        |       |
-| : : :  (-) :::#:#:#:#:#:#:##:####:###:###:####:##|        |       |
-|______.-'-'-.___________________________:####::###|________|_______|
-|      |-...-|             .--''''''--.  \:###:#####:###############|
-|      |;:.._|            |'''''/      |  \:#:#:##:##:###:#####:####|
-|      `-...-'            '''''/_...--'|   \#:#:#:##:##:###:###:####|
-|                          /\  |__...--'    \ :::#::#:#:#:#:#####:##|
-|_________________________/  \_______________\                      |
-|                                      | |      1. Order food       |
-|  Welcome to the The Winking Skeever! | |      2. Buy some potions |
-|  What are you aiming to do?          | |      3. Skedaddle        |
-|......................................|.|..........................|
-");
-
-        }
+    {     
 
         public static void IntroArt()
         {
@@ -163,5 +140,329 @@ namespace Midterm_POS_App
 
 
         }
+
+        public static void Display(string itemName)
+        {
+            if (itemName == "beef stew")
+            {
+                BeefArt();
+            }
+            else if (itemName == "cabbage potato soup")
+            {
+                CabbageArt();
+            }
+            else if (itemName == "horker stew")
+            { HorkerArt(); }
+
+            else if (itemName == "salmon steak")
+            { SalmonArt(); }
+
+            else if (itemName == "steamed mudcrab")
+            { MudcrabArt(); }
+
+            else if (itemName == "garlic bread")
+            { GarlicArt(); }
+
+            else if (itemName == "grilled leek plate")
+            { LeekArt(); }
+
+            else if (itemName == "boiled creme treat")
+            { CremeArt(); }
+
+            else if (itemName == "honey nut treat")
+            { HoneyNutArt(); }
+
+            else if (itemName == "long taffy treat" )
+            { TaffyArt(); }
+
+            else if (itemName == "snowberry crostata")
+            { SnowberryArt(); }
+
+            else if (itemName == "sweet roll")
+            { SweetRollArt(); }
+
+        }
+
+        public static void BeefArt()
+        {
+            Console.WriteLine("\n" +
+                "            (          \n" +
+                "        )    )         \n" +
+                "      _.(--\"(\"\"\"--.._   \n" +
+                "     /, _..-----).._,\\  \n" +
+                "    |  `'''-----'''`  | \n" +
+                "     \\               /  \n" +
+                "      '.           .'   \n" +
+                "        '--.....--'     ");
+            Console.WriteLine(@"
+.---------------------------.
+|       Beef Stew           |
+|---------------------------|
+|Hearty Stew with plenty of |
+|meaty goodness. Put some   |
+|hair on your chest.        |
+|                           |
+|___________________________|
+");
+        }
+
+        public static void CabbageArt()
+        {
+            Console.WriteLine("\n" +
+              "            (          \n" +
+              "        )    )         \n" +
+              "      _.(--\"(\"\"\"--.._   \n" +
+              "     /, _..-----).._,\\  \n" +
+              "    |  `'''-----'''`  | \n" +
+              "     \\               /  \n" +
+              "      '.           .'   \n" +
+              "        '--.....--'     ");
+            Console.WriteLine(@"
+.---------------------------.
+|    Cabbage Potato Soup    |
+|---------------------------|
+|Hearty autumn soup for the |
+|meatless among us.         |
+|                           |
+|                           |
+|___________________________|
+");
+
+        }
+
+        public static void HorkerArt()
+        {
+            Console.WriteLine("\n" +
+              "            (          \n" +
+              "        )    )         \n" +
+              "      _.(--\"(\"\"\"--.._   \n" +
+              "     /, _..-----).._,\\  \n" +
+              "    |  `'''-----'''`  | \n" +
+              "     \\               /  \n" +
+              "      '.           .'   \n" +
+              "        '--.....--'     ");
+
+            Console.WriteLine(@"
+.---------------------------.
+|      Horker Stew          |
+|---------------------------|
+|Horker stewed up with      |
+|garlic and lavender.       |
+|                           |
+|Better than it sounds.     |
+|___________________________|
+");
+
+        }
+
+        public static void SalmonArt()
+        {
+            Console.WriteLine(@"
+       (          
+        )    )   
+       ____________
+      /   \  / \   \
+     | \__\_\___/___\
+      \/____/__/__\_|
+   
+.---------------------------.
+|       Salmon Steak        |
+|---------------------------|
+|Fresh caught grilled       |
+|salmon steak.              |
+|                           |
+|                           |
+|___________________________|
+
+");
+        }
+
+        public static void MudcrabArt()
+        {
+            Console.WriteLine(@"
+          __       __
+         / <`     '> \
+        (  / @   @ \  )
+         \(_ _\_/_ _)/
+       (\ `-/     \-' /)");
+            Console.WriteLine("        \" ===\\     /=== \"");
+            Console.WriteLine(@"
+         .== ')___(`==.   
+        ' .='     `=.
+
+.----------------------------.
+| Steamed Mudcrab            |
+| ---------------------------|
+| Crack it open and smother  |
+| it in butter.              |
+|                            |
+|                            |
+|____________________________|
+");
+        }
+
+        public static void GarlicArt()
+        {
+            Console.WriteLine(@"
+
+           )        )
+      __)__     _( _(_
+     /  (  ))  / )   /|
+    /_____))  /_____/ /
+    `------' |______|/
+              
+.---------------------------.
+|       Garlic Bread        |
+|---------------------------|
+|Grilled bread covered in   |
+|enough garlic butter to    |
+|drop a vampire at 10 paces.|
+|                           |
+|___________________________|
+");
+        }
+
+        public static void LeekArt()
+        {
+            Console.WriteLine(@"
+        \\    \\\\
+         \// \// \\  //
+         //\\||\\ \\//
+        //  \|| \\ \\
+             ||   //
+.---------------------------.
+|    Grilled Leek Plate     |
+|---------------------------|
+|Gently seared leeks.       |
+|                           |
+|                           |
+|                           |
+|___________________________|
+
+
+");
+        }
+
+        public static void CremeArt()
+        {
+
+Console.WriteLine(@"
+
+       .-```````-.      
+     .'           '.
+    /               \ 
+   |    .- '`'-.     |
+   |    ;       ;    |
+   \     `-.,.-'     / 
+    \               /
+     '.           .'
+       '-.,___,.-'
+
+.-------------------------- -.
+| Boiled Creme Treat         |
+| ---------------------------|
+| Sweet pastry with a        |
+| custard topping.           |
+|                            |
+|                            |
+| ___________________________|
+");
+        }
+
+        public static void HoneyNutArt()
+        {
+            Console.WriteLine(@"
+
+
+   .'`;'.  .'`;'.  .';`'.
+===; ;  ;==; ;  ;==;   ;;=====
+   `.,,;'  `.,,;'  `.;,.'
+
+
+
+.---------------------------.
+|      Honey Nut Treat      |
+|---------------------------|
+|Sticky sweet nuts.         |
+|On a stick.                |
+|                           |
+|                           |
+|___________________________|
+");
+        }
+
+        public static void TaffyArt()
+        {
+            Console.WriteLine(@"
+___    ______________      ___
+\  .-./              \__.-.  /
+/__.-'\              /``'-.__\
+       ``````````````
+
+.---------------------------.
+|      Long Taffy Treat     |
+|---------------------------|
+|Two feet of soft taffy.    |
+|                           |
+|                           |
+|                           |
+|___________________________|
+");
+        }
+
+        public static void SnowberryArt()
+        {
+            Console.WriteLine(@"
+
+        .-```````-. 
+      .' o00oo00oo '.  
+     / oOoOoO00oOoO  \ 
+    |  00000000O0000o | 
+    | o0000OoO000000O | 
+    \  000000000oOo0  / 
+     \  oOoOoO00oO0  /  
+      '. o00oo00oo .'   
+        '-.,___,.-'     
+
+.---------------------------.
+|    Snowberry Crostata     |
+|---------------------------|
+|Flaky sweet pastry wrapped |
+|around fresh, tart         |
+|snowberries.               |
+|                           |
+|___________________________|
+
+
+");
+        }
+
+        public static void SweetRollArt()
+        {
+            Console.WriteLine(@"
+
+          ______
+         /@/  \@\
+       .@@@\  /@@@.
+      /@@@@@@@@@@@@\
+     |@@@@@@@@@@  @@|
+     |@@@@  @@@    @|
+     / @@   @@@     \
+    |        @       |
+     ```\________/```
+
+
+.---------------------------.
+|        Sweet Roll         |
+|---------------------------|
+|You can't buy happiness,   |
+|but you can get close with |
+|this iconic treat.         |
+|                           |
+|___________________________|
+
+");
+        }
+
     }
 }

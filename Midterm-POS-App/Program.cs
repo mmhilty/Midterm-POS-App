@@ -12,8 +12,7 @@ namespace Midterm_POS_App
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(150, 45);
-
+            Console.SetWindowSize(150, 50);
             Dictionary<string, FoodItem> foodDictionary = ManipFoodData.ReadData();
 
             Art.IntroArt();

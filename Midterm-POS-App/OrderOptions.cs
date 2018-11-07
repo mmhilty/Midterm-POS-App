@@ -79,6 +79,7 @@ namespace Midterm_POS_App
                     FoodItem item = pair.Value;
                     if (item.Name.ToLower() == userChoice.ToLower())
                     {
+                        Art.Display(item.Name.ToLower());
                         Console.WriteLine($"How many {item.Name}s do you want to add?");
                         int numberOfItem = Convert.ToInt32(Validation.NumberVal(Console.ReadLine()));
                         if (numberOfItem == 0)
