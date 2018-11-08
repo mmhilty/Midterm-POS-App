@@ -201,7 +201,7 @@ namespace Midterm_POS_App
 |Hearty Stew with plenty of |
 |meaty goodness. Put some   |
 |hair on your chest.        |
-|                           |
+|                        $8 |
 |___________________________|
 ");
         }
@@ -224,7 +224,7 @@ namespace Midterm_POS_App
 |Hearty autumn soup for the |
 |meatless among us.         |
 |                           |
-|                           |
+|                        $5 |
 |___________________________|
 ");
 
@@ -249,7 +249,7 @@ namespace Midterm_POS_App
 |Horker stewed up with      |
 |garlic and lavender.       |
 |                           |
-|Better than it sounds.     |
+|Better than it sounds. $8  |
 |___________________________|
 ");
 
@@ -271,7 +271,7 @@ namespace Midterm_POS_App
 |Fresh caught grilled       |
 |salmon steak.              |
 |                           |
-|                           |
+|                      $14  |
 |___________________________|
 
 ");
@@ -280,14 +280,13 @@ namespace Midterm_POS_App
         public static void MudcrabArt()
         {
             Console.WriteLine(@"
-          __       __
-         / <`     '> \
-        (  / @   @ \  )
-         \(_ _\_/_ _)/
-       (\ `-/     \-' /)");
+           __       __
+          / <`     '> \
+         (  / @   @ \  )
+          \(_ _\_/_ _)/
+        (\ `-/     \-' /)");
             Console.WriteLine("        \" ===\\     /=== \"");
-            Console.WriteLine(@"
-         .== ')___(`==.   
+            Console.WriteLine(@"         .== ')___(`==.   
         ' .='     `=.
 
 .----------------------------.
@@ -296,7 +295,7 @@ namespace Midterm_POS_App
 | Crack it open and smother  |
 | it in butter.              |
 |                            |
-|                            |
+|                       $15  |
 |____________________________|
 ");
         }
@@ -317,7 +316,7 @@ namespace Midterm_POS_App
 |Grilled bread covered in   |
 |enough garlic butter to    |
 |drop a vampire at 10 paces.|
-|                           |
+|                       $2  |
 |___________________________|
 ");
         }
@@ -325,18 +324,20 @@ namespace Midterm_POS_App
         public static void LeekArt()
         {
             Console.WriteLine(@"
-        \\    \\\\
+        ^     ^ ^
+        \\ ^  \\\\    ^
          \// \// \\  //
          //\\||\\ \\//
         //  \|| \\ \\
-             ||   //
+        `    ||  `//`
+              `   `
 .---------------------------.
 |    Grilled Leek Plate     |
 |---------------------------|
 |Gently seared leeks.       |
 |                           |
 |                           |
-|                           |
+|                       $2  |
 |___________________________|
 
 
@@ -349,13 +350,13 @@ namespace Midterm_POS_App
 Console.WriteLine(@"
 
        .-```````-.      
-     .'           '.
-    /               \ 
-   |    .- '`'-.     |
-   |    ;       ;    |
-   \     `-.,.-'     / 
-    \               /
-     '.           .'
+     .'          ,'.
+    /     {@@..    \\ 
+   |    .@@@@@@..    |
+   |   {;@@@@@@@;   ||
+   \     {@@@@-'     / 
+    \      `^'     //
+     '.         .`.'
        '-.,___,.-'
 
 .-------------------------- -.
@@ -364,7 +365,7 @@ Console.WriteLine(@"
 | Sweet pastry with a        |
 | custard topping.           |
 |                            |
-|                            |
+|                        $4  |
 | ___________________________|
 ");
         }
@@ -386,7 +387,7 @@ Console.WriteLine(@"
 |Sticky sweet nuts.         |
 |On a stick.                |
 |                           |
-|                           |
+|                       $2  |
 |___________________________|
 ");
         }
@@ -405,7 +406,7 @@ ___    ______________      ___
 |Two feet of soft taffy.    |
 |                           |
 |                           |
-|                           |
+|                       $3  |
 |___________________________|
 ");
         }
@@ -430,7 +431,7 @@ ___    ______________      ___
 |Flaky sweet pastry wrapped |
 |around fresh, tart         |
 |snowberries.               |
-|                           |
+|                       $5  |
 |___________________________|
 
 
@@ -440,7 +441,6 @@ ___    ______________      ___
         public static void SweetRollArt()
         {
             Console.WriteLine(@"
-
           ______
          /@/  \@\
        .@@@\  /@@@.
@@ -451,14 +451,13 @@ ___    ______________      ___
     |        @       |
      ```\________/```
 
-
 .---------------------------.
 |        Sweet Roll         |
 |---------------------------|
 |You can't buy happiness,   |
 |but you can get close with |
 |this iconic treat.         |
-|                           |
+|                        $2 |
 |___________________________|
 
 ");

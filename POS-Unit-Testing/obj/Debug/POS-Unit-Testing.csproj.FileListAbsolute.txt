@@ -1,0 +1,17 @@
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\POS-Unit-Testing.dll
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\POS-Unit-Testing.pdb
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Midterm-POS-App.exe
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Midterm-POS-App.pdb
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Midterm-POS-App.exe.config
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\obj\Debug\POS-Unit-Testing.csprojAssemblyReference.cache
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\obj\Debug\POS-Unit-Testing.csproj.CoreCompileInputs.cache
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\obj\Debug\POS-Unit-Testing.csproj.CopyComplete
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\obj\Debug\POS-Unit-Testing.dll
+C:\Users\mhilty\source\repos\Midterm-POS-App\POS-Unit-Testing\obj\Debug\POS-Unit-Testing.pdb

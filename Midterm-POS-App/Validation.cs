@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Midterm_POS_App
 {
-    class Validation
+    public class Validation
     {
 
         public static double NumberVal(string numberString)
@@ -32,7 +32,7 @@ namespace Midterm_POS_App
             }
         }
 
-        public static double CreditCardVal(string numberString)
+        public static string CreditCardVal(string numberString)
         {
             string NumberString = numberString;
 
@@ -41,16 +41,25 @@ namespace Midterm_POS_App
                 double NumberDbl;
                 if (double.TryParse(NumberString, out NumberDbl) && NumberString.Count() == 16)
                 {
-                    
-                        return NumberDbl;
+                    if (NumberString[0] == '3' || NumberString[0] == '4' || NumberString[0] == '5' || NumberString[0] == '6')
+                    {
+                        return NumberString;
+                    }
+
+                    else {
+                        Console.WriteLine("Invalid input. Please recheck your card number and re-enter:\n");
+                        NumberString = Console.ReadLine();
+
+                    }
 
                 }
 
                 else
                 {
-                    Console.WriteLine("Invalid input. Please recheck your card number.\n");
+                    Console.WriteLine("Invalid input. Please recheck your card number and re-enter:\n");
+                    NumberString = Console.ReadLine();
+
                 }
-                NumberString = Console.ReadLine();
 
             }
         }

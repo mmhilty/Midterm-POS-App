@@ -58,10 +58,10 @@ namespace Midterm_POS_App
             decimal orderTotal = OrderOptions.GetTotalCost(order, OrderOptions.taxPercentageDecimal);
             
             Console.WriteLine($"You are paying {String.Format("{0:C}", orderTotal)} by credit card. Please enter your credit card number:");
-            double ccNum = Validation.CreditCardVal(Console.ReadLine());
+            string ccNum = Validation.CreditCardVal(Console.ReadLine());
 
             int secCode;
-            if (ccNum.ToString()[0] == 3)
+            if (ccNum[0] == 3)
             {
                 Console.WriteLine("Please enter the 4 digit security code on the front of your card.");
                 secCode = Validation.SecurityCodeVal(Console.ReadLine(), 4);
@@ -78,7 +78,7 @@ namespace Midterm_POS_App
             OrderOptions.ListCurrentOrderDetails(order, " Receipt  ");
 
             Console.WriteLine($"{String.Format("{0:C}", orderTotal)} has been paid via your credit card: \n");
-            Console.WriteLine($"{"Card Number:",20}{ccNum.ToString("D"),25}");
+            Console.WriteLine($"{"Card Number:",20}{ccNum,25}");
             Console.WriteLine($"{"Security Code:",20}{secCode,25}");
             Console.WriteLine($"{"Expiration Date:",20}{ccExp,25}\n");
             Console.WriteLine("Have a great day!\n");
